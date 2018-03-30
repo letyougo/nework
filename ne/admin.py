@@ -9,12 +9,15 @@ class profile_admin(admin.ModelAdmin):
 admin.site.register(Profile,profile_admin)
 
 class auth_admin(admin.ModelAdmin):
-    list_display = ('profile','auth_type','token','checked')
+    list_display = ('profile','type','key','value','checked')
 
 admin.site.register(Auth,auth_admin)
 
+class demand_type_admin(admin.ModelAdmin):
+    list_display = ('name','deleted')
+
 class deman_admin(admin.ModelAdmin):
-    list_display = ('user','type','title','dead_line','budget')
+    list_display = ('user','type','title','dead_line','budget','deleted')
 
 admin.site.register(DemandType)
 admin.site.register(Demand,deman_admin)
